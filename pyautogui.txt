@@ -1,0 +1,139 @@
+安装代码：
+
+pip install pyautogui 
+1.简介
+
+1.1 目的
+
+PyAutoGUI是一个纯Python的GUI自动化工具，其目的是可以用程序自动控制鼠标和键盘操作，多平台支持（Windows，OS X，Linux）。可以用pip安装，Github上有源代码。
+
+下面的代码让鼠标移到屏幕中央。
+
+import pyautogui 
+screenWidth, screenHeight = pyautogui.size() 
+pyautogui.moveTo(screenWidth / 2, screenHeight / 2) 
+PyAutoGUI可以模拟鼠标的移动、点击、拖拽，键盘按键输入、按住操作，以及鼠标+键盘的热键同时按住等操作，可以说手能动的都可以。
+
+pyautogui基础操作样例
+
+import pyautogui
+
+获取当前屏幕分辨率
+screenWidth, screenHeight = pyautogui.size()
+
+获取当前鼠标位置
+currentMouseX, currentMouseY = pyautogui.position()
+
+鼠标移动坐标为100,100位置 绝对移动
+pyautogui.moveTo(100, 100)
+
+鼠标左击
+pyautogui.click()
+
+鼠标乡下移动 相对移动
+pyautogui.moveRel(None, 10)
+
+鼠标双击
+pyautogui.doubleClick()
+
+用缓动/渐变函数让鼠标2秒后移动到(500,500)位置
+use tweening/easing function to move mouse over 2 seconds.
+pyautogui.moveTo(500, 500, duration=2, tween=pyautogui.easeInOutQuad)
+
+在每次输入之间暂停0.25秒
+pyautogui.typewrite(‘Hello world!’, interval=0.25)
+
+键盘点击esc
+pyautogui.press(‘esc’)
+
+按住shift键
+pyautogui.keyDown(‘shift’) 
+pyautogui.press([‘left’, ‘left’, ‘left’, ‘left’, ‘left’, ‘left’])
+
+放开shift键
+pyautogui.keyUp(‘shift’) 
+pyautogui.hotkey(‘ctrl’, ‘c’)
+
+PyAutoGUI键盘表：
+
+‘enter’ (或‘return’ 或 ‘\n’)
+
+回车
+
+‘esc’
+
+ESC键
+
+‘shiftleft’, ‘shiftright’
+
+左右SHIFT键
+
+‘altleft’, ‘altright’
+
+左右ALT键
+
+‘ctrlleft’, ‘ctrlright’
+
+左右CTRL键
+
+‘tab’ (‘\t’)
+
+TAB键
+
+‘backspace’, ‘delete’
+
+BACKSPACE 、DELETE键
+
+‘pageup’, ‘pagedown’
+
+PAGE UP 和 PAGE DOWN键
+
+‘home’, ‘end’
+
+HOME 和 END键
+
+‘up’, ‘down’, ‘left’, ‘right’
+
+箭头键
+
+‘f1’, ‘f2’, ‘f3’….
+
+F1…….F12键
+
+‘volumemute’, ‘volumedown’, ‘volumeup’
+
+有些键盘没有
+
+‘pause’
+
+PAUSE键
+
+‘capslock’, ‘numlock’, ‘scrolllock’
+
+CAPS LOCK, NUM LOCK, 和 SCROLL LOCK 键
+
+‘insert’
+
+INS或INSERT键
+
+‘printscreen’
+
+PRTSC 或 PRINT SCREEN键
+
+‘winleft’, ‘winright’
+
+Win键
+
+‘command’
+
+Mac OS X command键
+
+文档：
+
+https://muxuezi.github.io/posts/doc-pyautogui.html
+
+http://pyautogui.readthedocs.io/en/latest/introduction.html
+
+http://blog.csdn.net/ibiao/article/details/54406803
+
+本文地址：http://www.chenxm.cc/post/547.html 
